@@ -1,0 +1,22 @@
+body{
+    background-color: #e6efe9;
+}
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid black;
+}
+.sidenav{
+    position: absolute;
+    top: 38px;
+    left: 0;
+    bottom: 0;
+    border: 1px solid black;
+    writing-mode: vertical-lr;
+}
+h{
+    font-size: 24pt;
+    padding: 10px;
+}
