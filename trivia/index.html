@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <title>Trivia</title>
+        <script>
+            $(document).ready(function(){
+                $(".w").on("click", function(){
+                    if($("h2.corr").is(":visible")||$("h2.inc").is(":visible")){
+                    }else {
+                    $(this).css("background-color", "#992f29")
+                    $(".r").css("background-color", "#1e5730")
+                    $("h2.inc").show()
+                    }
+                })
+                $(".r").on("click", function(){
+                    if($("h2.corr").is(":visible")||$("h2.inc").is(":visible")){
+                    }else{
+                        $(this).css("background-color", "#1e5730")
+                        $("h2.corr").show()
+                    }
+                })
+                $("#checkAns").on("click", function(){
+                    var ans = document.getElementById("ans").value
+                    var cAns="hawaii"
+                    if($("h3.inc").is(":visible")||$("h3.corr").is(":visible")){
+                        }else{
+                        if(ans.toLowerCase()==cAns){
+                            $("h3.corr").show()
+                            $("#ans").css("background-color","#1e5730")
+                            document.getElementById("ans").disabled=true
+                        }else{
+                            $("h3.inc").show()
+                            $("#ans").css("background-color","#992f29")
+                            document.getElementById("ans").disabled=true
+                        }
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>TRIVIA</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which country has the smallest population?</h3>
+                <button class="w" id="one">Tokelau</button> <button class="w" id="two">Eswatini</button> <button class="r" id="three">The Vatican City</button> <button class="w" id="four">Uraguay</button>
+                <h2 class="inc">Incorrect!</h2>
+                <h2 class="corr">Correct!</h2>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+               <h3>What state was the last state to join the US?</h3>
+               <input id="ans" type="text"> <button id="checkAns">check answer</button> <h3 class="inc" style="color: green;">Hawaii</h3>
+               <h3 class="inc">Incorrect!</h3>
+                <h3 class="corr">Correct!</h3>
+            </div>
+        </div>
+    </body>
+</html>
